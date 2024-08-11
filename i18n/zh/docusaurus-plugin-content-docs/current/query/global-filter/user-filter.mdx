@@ -169,7 +169,7 @@ JSqlClient sqlClient = JSqlBuilder
 val sqlClient =
     newKSqlClient {
         // highlight-next-line
-        addFilters(new CustmerFilter())
+        addFilters(CustmerFilter())
         ...省略其他配置...
     }
 ```
@@ -346,7 +346,7 @@ val authors = SqlClient
     where 
         tb_2_.AUTHOR_ID in (?, ?, ?, ?, ?) 
     and 
-        /* highlight-next-line */
+        // highlight-next-line
         tb_1_.TENANT = ?
     ```
 
@@ -388,7 +388,7 @@ val tmpSqlClient =
 
 -   `CachableFilter`/`KCachableFilter`
 
--   `AssociationIntegrityAssuranceFilter/AssociationIntegrityAssuranceFilter`
+-   `AssociationIntegrityAssuranceFilter/KAssociationIntegrityAssuranceFilter`
 
 -   `ShardingFilter`/`KShardingFilter`
 
