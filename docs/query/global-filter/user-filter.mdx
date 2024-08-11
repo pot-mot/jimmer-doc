@@ -169,7 +169,7 @@ JSqlClient sqlClient = JSqlBuilder
 val sqlClient =
     newKSqlClient {
         // highlight-next-line
-        addFilters(new CustmerFilter())
+        addFilters(CustmerFilter())
         ...Other config omitted...
     }
 ```
@@ -236,7 +236,7 @@ select
     tb_1_.PRICE,
     tb_1_.STORE_ID
 from BOOK as tb_1_ 
-/* highlight-next-line */
+// highlight-next-line
 where tb_1_.TENANT = ?
 ```
 
@@ -348,7 +348,7 @@ This generates two SQL statements:
     where
         tb_2_.AUTHOR_ID in (?, ?, ?, ?, ?)
     and
-        /* highlight-next-line */  
+        // highlight-next-line
         tb_1_.TENANT = ? 
     ```
        
@@ -390,7 +390,7 @@ In addition to the basic `Filter`/`KFilter` interface, filter classes can also i
 
 -   `CachableFilter`/`KCachableFilter`
 
--   `AssociationIntegrityAssuranceFilter`/`AssociationIntegrityAssuranceFilter`
+-   `AssociationIntegrityAssuranceFilter`/`KAssociationIntegrityAssuranceFilter`
 
 -   `ShardingFilter`/`KShardingFilter`
 
